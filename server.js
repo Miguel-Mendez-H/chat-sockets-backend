@@ -8,7 +8,7 @@ const { createUser, getUser, deleteUser, validateUser } = require('./users')
 //Inicializo la instancia de Socket.io y le pago el servidor HTTP
 const io = require('socket.io')(http, {
     cors: {
-        origin: '*',
+        origin: 'http://localhost:4200',
         methods: ["GET", "POST"],
         credentials: true
     }
