@@ -1,12 +1,16 @@
 const app = require('express')()
 const http = require('http').createServer(app)
 const PORT = process.env.PORT || 3000
+const cors = require ('cors')
 const { createUser, getUser, deleteUser, validateUser } = require('./users')
+
 
 //Inicializo la instancia de Socket.io y le pago el servidor HTTP
 const io = require('socket.io')(http, {
     cors: {
-        origins: ['*']
+        origin: '*',
+        methods: ["GET", "POST"],
+        credentials: true
     }
 });
 
