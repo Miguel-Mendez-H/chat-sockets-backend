@@ -6,7 +6,7 @@ const { createUser, getUser, deleteUser, validateUser } = require('./users')
 //Inicializo la instancia de Socket.io y le pago el servidor HTTP
 const io = require('socket.io')(http, {
     cors: {
-        origins: ['https://miguel-mendez-h.github.io/chat-angular-sockets/']
+        origins: ['*']
     }
 });
 
